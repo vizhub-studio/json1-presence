@@ -2,7 +2,7 @@
 
 A fork of [json1](https://github.com/ottypes/json1) that adds support for [ShareDB Presence](https://share.github.io/sharedb/presence).
 
-Borne of frustration that the pull request [Proposal – Add support for presences #25](https://github.com/ottypes/json1/pull/25) went unmeged for years, this fork was created to unblock implementation of presence cursors in [VZCode](https://github.com/vizhub-core/vzcode/issues/16) and [VizHub](https://vizhub.com/). If that PR one day gets merged, this package will become deprecated.
+Borne of frustration that the pull request [Proposal – Add support for presences #25](https://github.com/ottypes/json1/pull/25) went unmeged for years, this fork was created to unblock implementation of presence cursors in [VZCode](https://github.com/vizhub-studio/vzcode/issues/16) and [VizHub](https://vizhub.com/). If that PR one day gets merged, this package will become deprecated.
 
 Original README below...
 
@@ -20,6 +20,17 @@ This code it is written to replace [ottypes/json0](https://github.com/ottypes/js
 
 The spec for operations is in [spec.md](spec.md).
 
+
+## Fork scope and verification
+
+This repository publishes **`ot-json1-presence`**, a fork of the JSON1 operational transformation type with additional presence handling. It is not a replacement for ShareDB itself. The upstream JSON1 explanation retained below is historical reference; fork-specific behavior should be checked against [`test/presence.js`](test/presence.js) and the current [`lib/`](lib/) source.
+
+```bash
+npm ci
+npm test
+```
+
+The `prepare` script **builds `dist/`**, invoking TypeScript and Terser. A separate `npm run fuzzer` script exercises fuzz testing; run it only as an intentional deeper check. For editor integration, see [VZCode](https://github.com/vizhub-studio/vzcode). Confirm downstream OT type compatibility and presence semantics before incorporating this fork into live collaborative documents.
 
 ## Usage
 
